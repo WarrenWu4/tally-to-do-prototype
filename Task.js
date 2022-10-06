@@ -1,12 +1,29 @@
-import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, } from "react-native";
+import React, {useState} from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Pressable} from "react-native";
 import { MaterialIcons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
+
+function MyCheckbox({
+    checked,
+    onChange,
+}) {
+    function onCheckmarkPress() {
+        onChange(!checked);
+    }
+
+    return(
+        <Pressable style={[styles.checkboxBase, checked && styles.checkboxChecked]} onPress={onCheckmarkPress}>
+            {checked && <Ionicons name='checkmark' size={24} color='white'/>}
+        </Pressable>
+    );
+}
 
 export default Task = (props) => {
+    const [checked, onChange] = useState(false);
     return (
         <View style={styles.container}>
             <View style={styles.indexContainer}>
-                <Text style={styles.index}>{props.index}</Text>
+                <MyCheckbox checked={checked} onChange={onChange}/>
             </View>
             <View style={styles.taskContainer}>
                 <Text style={styles.task}>{props.task}</Text>
@@ -28,7 +45,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffffff',
         borderRadius: 12,
         borderColor: '#000000',
-        borderWidth: 2,
+        borderWidth: 0,
         marginRight: 10,
         alignItems: 'center',
         justifyContent: 'center',
@@ -60,4 +77,17 @@ const styles = StyleSheet.create({
     delete: {
         marginLeft: 10,
     },
+    checkboxBase: {
+        width: 50,
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 12,
+        borderWidth: 2,
+        borderColor: 'black',
+        backgroundColor: 'transparent',
+    },
+    checkboxChecked: {
+        backgroundColor: '#000000',
+    }
 });
