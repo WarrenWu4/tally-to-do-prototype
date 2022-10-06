@@ -21,7 +21,7 @@ export default Task = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'row',
+        flexDirection: 'row', //puts index box and text box into single row
         marginHorizontal: 20,
     },
     indexContainer: {
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         borderColor: '#000000',
         borderWidth: 2,
-        flexDirection: 'row',
+        flexDirection: 'row', //puts text and delete icon in same row
         justifyContent: 'space-between',
         alignItems: 'center',
         flex: 1,
