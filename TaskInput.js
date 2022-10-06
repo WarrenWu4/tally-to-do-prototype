@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         paddingHorizontal: 10,
         position: 'absolute',
-        bottom: 20,
+        top: 60,
     },
     inputField: {
         color: '#fff',
