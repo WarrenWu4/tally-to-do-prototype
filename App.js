@@ -18,7 +18,6 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-        <Text style={styles.heading}>TODO LIST PROTOTYPE (REMOVE HEADING)</Text>
       <ScrollView style={styles.scrollView}>
         {
         tasks.map((task, index) => {
