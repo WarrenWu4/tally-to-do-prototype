@@ -1,6 +1,6 @@
 import React from 'react';
-import {StyleSheet, Text, View, TouchableOpacity,} from 'react-native';
-import {MaterialIcons} from '@expo/vector-icons';
+import { StyleSheet, Text, View, TouchableOpacity, } from "react-native";
+import { MaterialIcons } from '@expo/vector-icons';
 
 export default Task = (props) => {
     return (
@@ -18,13 +18,14 @@ export default Task = (props) => {
     );
 }
 
+
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         marginHorizontal: 20,
     },
     indexContainer: {
-        backgroundColor: '#9aa2ad',
+        backgroundColor: '#3E3364',
         borderRadius: 12,
         marginRight: 10,
         alignItems: 'center',

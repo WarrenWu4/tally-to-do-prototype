@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import { KeyboardAvoidingView, StyleSheet, View, TextInput, TouchableOpacity, Platform, Touchable, } from 'react-native';
-import {MaterialIcons} from '@expo/vector-icons';
+import { KeyboardAvoidingView, StyleSheet, View, TextInput, TouchableOpacity, } from "react-native";
+import { MaterialIcons } from '@expo/vector-icons'; 
 
 export default TaskInput = (props) => {
-    const[task, setTask] = useState();
+    const [task, setTask] = useState();
 
     const handleAddTask = (value) => {
         props.addTask(value);
@@ -11,14 +11,17 @@ export default TaskInput = (props) => {
     }
 
     return (
-        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding':'height'} style={styles.container}>
-            <TextInput style={styles.inputField} value={task} onChangeText={text => setTask(text)} placeholder={'Write a task'} placeholderTextColor='#fff'/>
-            <TouchableOpacity onPress={()=>handleAddTask(task)}>
-                <View style={styles.button}>
-                    <MaterialIcons name="keyboard-arrow-up" size={24} color="black"/>
-                </View>
-            </TouchableOpacity>
-        </KeyboardAvoidingView>
+        <KeyboardAvoidingView 
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        style={styles.container}
+      >
+        <TextInput style={styles.inputField} value={task} onChangeText={text => setTask(text)} placeholder={'Write a task'} placeholderTextColor={'#fff'}/>
+        <TouchableOpacity onPress={() => handleAddTask(task)}>
+          <View style={styles.button}>
+              <MaterialIcons name="keyboard-arrow-up" size={24} color="black" />
+          </View>
+        </TouchableOpacity>
+      </KeyboardAvoidingView>
     );
 }
 
@@ -30,7 +33,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
         borderRadius: 12,
         flexDirection: 'row',
-        assignItems: 'center',
+        alignItems: 'center',
         justifyContent: 'space-between',
         paddingHorizontal: 10,
         position: 'absolute',
@@ -47,6 +50,6 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         backgroundColor: '#fff',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'center'
     },
 });
