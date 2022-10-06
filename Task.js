@@ -11,7 +11,7 @@ export default Task = (props) => {
             <View style={styles.taskContainer}>
                 <Text style={styles.task}>{props.task}</Text>
                 <TouchableOpacity onPress={() => props.deleteTask()}>
-                    <MaterialIcons style={styles.delete} name="delete" size={18} color='#fff' />
+                    <MaterialIcons style={styles.delete} name="delete" size={18} color='#000' />
                 </TouchableOpacity>
             </View>
         </View>
@@ -25,8 +25,10 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
     },
     indexContainer: {
-        backgroundColor: '#3E3364',
+        backgroundColor: '#ffffff',
         borderRadius: 12,
+        borderColor: '#000000',
+        borderWidth: 2,
         marginRight: 10,
         alignItems: 'center',
         justifyContent: 'center',
@@ -34,12 +36,14 @@ const styles = StyleSheet.create({
         height: 50,
     },
     index: {
-        color: '#fff',
+        color: '#000000',
         fontSize: 20,
     },
     taskContainer: {
-        backgroundColor: '#3E3364',
+        backgroundColor: '#ffffff',
         borderRadius: 12,
+        borderColor: '#000000',
+        borderWidth: 2,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -49,7 +53,7 @@ const styles = StyleSheet.create({
         minHeight: 50,
     },
     task: {
-        color: '#fff',
+        color: '#000000',
         width: '90%',
         fontSize: 16,
     },
