@@ -21,15 +21,15 @@ export default function App() {
       <ScrollView style={styles.scrollView}>
         {
         tasks.map((task, index) => {
-          if (index === 1) { //if its not the first task
+          if (index === 0) { //if its the first task (based on index)
             return (
-              <View key={index} style={styles.taskContainer}>
+              <View key={index} style={styles.taskContainerFirst}>
                 <Task index={index + 1} task={task} deleteTask={() => deleteTask(index)}/>
               </View>
             );
           }
           return (
-            <View key={index} style={styles.taskContainerFirst}>
+            <View key={index} style={styles.taskContainer}>
               <Task index={index + 1} task={task} deleteTask={() => deleteTask(index)}/>
             </View>
           );
@@ -49,10 +49,10 @@ const styles = StyleSheet.create({
   scrollView: {
     marginBottom: 70,
   },
-  taskContainer: {
-    marginTop: 20,
-  },
   taskContainerFirst: { //different formatting for inital task
     marginTop: 135,
+  },
+  taskContainer: { 
+    marginTop: 20,
   },
 });
