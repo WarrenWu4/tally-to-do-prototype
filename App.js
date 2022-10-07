@@ -3,7 +3,7 @@ import { Keyboard, ScrollView, StyleSheet, Text, View } from 'react-native';
 import TaskInput from 'to-do-prototype/TaskInput.js';
 import Task from 'to-do-prototype/Task.js';
 
-//testing commits and git
+//main app
 export default function App() {
   const [tasks, setTasks] = useState([]);
 
