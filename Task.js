@@ -13,7 +13,7 @@ function MyCheckbox({
 
     return(
         <Pressable style={[styles.checkboxBase, checked && styles.checkboxChecked]} onPress={onCheckmarkPress}>
-            {checked && <Ionicons name='checkmark' size={24} color='white'/>}
+            {checked && <Ionicons name='checkmark' size={20} color='white'/>}
         </Pressable>
     );
 }
@@ -40,17 +40,18 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row', //puts index box and text box into single row
         marginHorizontal: 20,
+        borderRadius: 12,
+        borderColor: '#000000',
+        borderWidth: 2,
     },
     indexContainer: {
         backgroundColor: '#ffffff',
-        borderRadius: 12,
-        borderColor: '#000000',
-        borderWidth: 0,
-        marginRight: 10,
+        marginLeft: 5,
         alignItems: 'center',
         justifyContent: 'center',
         width: 50,
         height: 50,
+        borderRadius: 15,
     },
     index: {
         color: '#000000',
@@ -58,28 +59,26 @@ const styles = StyleSheet.create({
     },
     taskContainer: {
         backgroundColor: '#ffffff',
-        borderRadius: 12,
-        borderColor: '#000000',
-        borderWidth: 2,
         flexDirection: 'row', //puts text and delete icon in same row
         justifyContent: 'space-between',
         alignItems: 'center',
         flex: 1,
-        paddingHorizontal: 10,
+        paddingHorizontal: 5,
         paddingVertical: 5,
         minHeight: 50,
+        borderRadius: 15,
     },
     task: {
         color: '#000000',
         width: '90%',
-        fontSize: 16,
+        fontSize: 20,
     },
     delete: {
-        marginLeft: 10,
+        marginRight: 20,
     },
     checkboxBase: {
-        width: 50,
-        height: 50,
+        width: 25,
+        height: 25,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 12,
