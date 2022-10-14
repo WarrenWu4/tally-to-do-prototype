@@ -15,7 +15,7 @@ export default TaskInput = (props) => {
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.container}
       >
-        <TextInput style={styles.inputField} value={task} onChangeText={text => setTask(text)} onSubmitEditing={() => handleAddTask(task)} placeholder={'TODO LIST PROTOTYPE'} placeholderTextColor={'#000000'}/>
+        <TextInput style={styles.inputField} value={task} onChangeText={text => setTask(text)} onSubmitEditing={() => handleAddTask(task)} placeholder={'To-do List Prototype'}/>
         <TouchableOpacity onPress={() => handleAddTask(task)}>
           <View style={styles.button}>
               <MaterialIcons name="keyboard-arrow-up" size={24} color="black" />
@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
         color: '#000000',
         height: 50,
         flex: 1,
+        fontSize: 20,
     },
     button: {
         height: 30,
