@@ -5,23 +5,20 @@ import { MaterialIcons } from '@expo/vector-icons';
 export default TaskInput = (props) => {
     const [task, setTask] = useState();
 
-    const handleAddTask = (value) => {
-        props.addTask(value);
+    const handleAddTask = (task) => {
+        props.addTask(task);
         setTask(null);
     }
 
     return (
-        <KeyboardAvoidingView 
-        behavior={Platform.OS === "ios" ? "padding" : "height"}
-        style={styles.container}
-      >
-        <TextInput style={styles.inputField} value={task} onChangeText={text => setTask(text)} onSubmitEditing={() => handleAddTask(task)} placeholder={'To-do List Prototype'}/>
-        <TouchableOpacity onPress={() => handleAddTask(task)}>
-          <View style={styles.button}>
-              <MaterialIcons name="keyboard-arrow-up" size={24} color="black" />
-          </View>
-        </TouchableOpacity>
-      </KeyboardAvoidingView>
+        <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={styles.container}>
+            <TextInput style={styles.inputField} value={task} onChangeText={text => setTask(text)} onSubmitEditing={() => handleAddTask(task)} placeholder={'To-do List Prototype'}/>
+            <TouchableOpacity onPress={() => handleAddTask(task)}>
+            <View style={styles.button}>
+                <MaterialIcons name="keyboard-arrow-up" size={24} color="black" />
+            </View>
+            </TouchableOpacity>
+        </KeyboardAvoidingView>
     );
 }
 

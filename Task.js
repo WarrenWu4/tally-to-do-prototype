@@ -20,13 +20,8 @@ function MyCheckbox({
 
 export default Task = (props) => {
     const [checked, onChange] = useState(false);
-    const [task, setTask] = useState();
     const [text, onChangeText] = useState(props.task);
 
-    const handleAddTask = (value) => {
-        props.addTask(value);
-        setTask(null);
-    }
     return (
         <View style={styles.container}>
             <View style={styles.indexContainer}>
@@ -91,7 +86,6 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         borderWidth: 2,
         borderColor: 'black',
-        backgroundColor: 'transparent',
     },
     checkboxChecked: {
         backgroundColor: '#000000',

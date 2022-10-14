@@ -19,7 +19,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <ScrollView style={styles.scrollView}>
+      <ScrollView contentContainerStyle={styles.scrollView}>
         {
         tasks.map((task, index) => {
           if (index === 0) { //if its the first task (based on index)
@@ -49,11 +49,13 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     marginBottom: 70,
+    backgroundColor: '#fff',
   },
   taskContainerFirst: { //different formatting for inital task
     marginTop: 135,
   },
   taskContainer: { 
     marginTop: 20,
+    backgroundColor: '#ffffff',
   },
 });
