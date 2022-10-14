@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Pressable} from "react-native";
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, Pressable} from "react-native";
 import { MaterialIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -20,13 +20,20 @@ function MyCheckbox({
 
 export default Task = (props) => {
     const [checked, onChange] = useState(false);
+    const [task, setTask] = useState();
+    const [text, onChangeText] = useState(props.task);
+
+    const handleAddTask = (value) => {
+        props.addTask(value);
+        setTask(null);
+    }
     return (
         <View style={styles.container}>
             <View style={styles.indexContainer}>
                 <MyCheckbox checked={checked} onChange={onChange}/>
             </View>
             <View style={styles.taskContainer}>
-                <Text style={styles.task}>{props.task}</Text>
+                <TextInput style={styles.task} value={text} onChangeText={onChangeText}></TextInput>
                 <TouchableOpacity onPress={() => props.deleteTask()}>
                     <MaterialIcons style={styles.delete} name="delete" size={18} color='#000' />
                 </TouchableOpacity>
